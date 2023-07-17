@@ -1,18 +1,10 @@
 """Original Example from https://fastapi.tiangolo.com/."""
 from typing import Union
 from fastapi import FastAPI
-from pydantic import BaseModel
 
+from app.models.item import Item
 
 app = FastAPI()
-
-
-class Item(BaseModel):
-    """Define the model of the input."""
-
-    name: str
-    price: float
-    is_offer: Union[bool, None] = None
 
 
 @app.get("/")
